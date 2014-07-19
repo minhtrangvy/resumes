@@ -1,0 +1,121 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass{res} 
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\newsectionwidth{0pt}  % So the text is not indented under section headings
+\setlength{\textheight}{10.2in} % set text height big enough for box
+\topmargin=-.5in       % to start box .5in from top of page
+\oddsidemargin=-.5in   % to start box .5in from left of page
+    
+\begin{document}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following lines define \boxaround, used to draw a box on the page.
+% The parameter is the entire text of the resume. Must fit on one page!
+%
+% \boxaroundhmargin is the left & right margin around the text inside the box.
+% \boxaroundvmargin is the top & bottom margin around the text inside the box.
+% \boxrulethickness controls thickness of line used to draw the box.
+% You can change these 3 things in the lines below:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newdimen\boxrulethickness\newdimen\boxaroundhmargin\newdimen\boxaroundvmargin
+\boxrulethickness=.5pt        %controls thickness of line 
+\boxaroundhmargin=15pt        % about a half inch
+\boxaroundvmargin=5pt        % to fit more text on page, make this smaller
+%%%%%%%%%%%%%%%%%%%%%%%%% Don't read this stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hsize=7.5in% \vsize=10.5in             % use bigger dimensions for box
+\newbox\MACboxA  \newdimen\MACdimenA
+% \borderandboxit is used inside \boxaround:
+\def\borderandboxit#1#2#3{\vbox{\hrule height#2\hbox{\vrule width#2\hskip#1\hskip-#2%
+  \vbox{\vskip#1\relax#3\vskip#1}\hskip#1\hskip-#2\vrule width#2}\hrule height#2}}
+%
+\long\def\boxaround#1{\vskip6pt
+  {\MACdimenA=\hsize \advance\MACdimenA by-\boxaroundhmargin
+   \advance\MACdimenA by-\boxaroundhmargin   % once for each side
+   \setbox\MACboxA=\hbox to \hsize{\hskip\boxaroundhmargin%\hss
+                     \vbox{\hsize=\MACdimenA
+                           \vskip\boxaroundvmargin #1
+                           \vskip\boxaroundvmargin}\hss}%
+   \borderandboxit{0pt}\boxrulethickness{\box\MACboxA}}%
+  \vskip2pt plus0pt minus0pt
+}
+%%%%%%%%%%%%%%%%%%%  End of \boxaround macro %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\boxaround{ % put the text on the page inside a box  
+
+%\name{MINHTRANG VY}
+%\address{2174 Seventh Street, Troy, NY 12180. (518) 272-4460} 
+\begin{resume}
+
+\section{\sl \bf MINHTRANG VY}
+\begin{ncolumn}{2}
+304 East Foothill Blvd. Box 697 & minhtrangvy.com \\
+Claremont, CA 91711 & github.com/minhtrangvy \\
+(858) 205 - 3868 & linkedin.com/pub/minhtrang-vy/37/244/11 \\
+\end{ncolumn}
+
+\section{\sl \bf Objective}  % with postscript font \sl produces bold italic
+%                           with default font (CM) \sl produces slanted type
+A summer position in Software Development with opportunities to gain experience in Project Management.
+ 
+\section{\bf Education}
+Harvey Mudd College, B.S.,  Computer Science, 
+expected May 2016 \\
+Preuss High School of UCSD, Graduated with Honors, June 2012 
+ 
+\section{\sl \bf Relevant Coursework}
+\begin{ncolumn}{3}
+Intro to Computer Science  &  Principles of Computer Science & Programming Practicum\\
+Logic and Computability & Computer Systems & Data Structures \\
+Software Development & Databases & Algorithms \\
+Linear Algebra & Differential Equations & Intro to Machine Learning \\
+\end{ncolumn}
+
+\section{\sl \bf Programming Skills}
+PHP $|$ Slim $|$ Smarty $|$ HTML $|$ CSS $|$ Javascript $|$ Bootstrap $|$ JQuery $|$ C++ $|$ Java $|$ Python $|$ Racket/Scheme \\ Prolog $|$ MySQL $|$ MeekroDB $|$ Chrome Extensions $|$ Android Development and various APIs.
+
+\section{\sl \bf Computer Science Experience}
+\begin{ncolumn}{2} 
+{\it Software Engineering Intern} & 5/14-7/14
+\end{ncolumn}\\
+Bitcoin Builder, Santa Monica, CA\\
+Worked in a team to utilize 5+ bitcoin exchange APIs to create a continually running arbitrage/market making program that took advantage of the difference in bitcoin prices across those exchanges. Developed a Google Chrome extension that allowed Bitcoin Builder members to send bitcoins from their browser, facilitating the process of actually using bitcoins. Also lead the creation of the user interface and frontend for BitcoinBuilder.com, a new bitcoin exchange.
+
+\begin{ncolumn}{2} 
+{\it Web Developer} & 11/13-1/14
+\end{ncolumn}\\
+Harvey Mudd College / The Social Rules Project, Claremont, CA\\
+Assisted Professor Steinberg in creating his personal website as well as the Social Rules Project website (rulechangers.org), a nonprofit organization for environmental change. Specifically focused on creating interactive images for seven countries, redirecting contact forms to the appropriate people, and fixing display bugs.
+
+\begin{ncolumn}{2} 
+{\it Computer Science Tutor and Grader} &  8/13-Present
+\end{ncolumn}\\
+Harvey Mudd College, Claremont, CA\\
+Held tutoring hours for Intro to CS and Principles of CS (introductory CS courses at HMC), taught material such as BSTs, BFS/DFS, Use-it-or-lose-it, mutural recursion, and other fundamental computer science ideas, in three different languages: Racket/Scheme, Prolog, and Java. 
+
+\begin{ncolumn}{2} 
+{\it Computer Science Researcher} & 6/13-8/13
+\end{ncolumn}\\
+Harvey Mudd College / Google CS4HS, Claremont, CA\\
+Hosted computer science workshops for middle and high school teachers in order to teach teachers how to teach computer science. Utilized interactive and visual programming languages to teach the fundamentals of Computer Science by developing my own workshop on various topics, such as binary numbers, encoding/decoding, Python, etc. Also was on a team that created an entire curriculum on Stanford eDX (with videos!) on computer science.
+
+\section{\sl \bf Other Work Experience}
+{\sl Dean of Students Tutor}, Harvey Mudd College, 1/13-6/13
+ 
+\section{\sl \bf Extra-curricular Activities}
+\begin{ncolumn}{2} 
+W-ACM Treasurer & 6/14-Present\\
+Society of Women Engineers Treasurer & 6/13-Present\\
+Summer Institute Mentor & 4/14-8/14\\
+5C Hackathon - Beginners Section & Spring 2013 and Fall 2014\\
+\end{ncolumn}\\
+{\it Others:} personal website, iOS/Android app development, web development, Netflix, exercise, climbing and hiking.
+
+\end{resume}
+
+\vfill} %    end the material being boxed.
+\end{document}
+
+
